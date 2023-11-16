@@ -10,16 +10,24 @@ public class ListaVetores {
 	}
 	
 	public void add(int ind, int elem) {
-		if (ind >=0 && ind <= tamanho && tamanho < vetor.length) {
-			for(int i = tamanho; i > ind; i--) {
-				vetor[i] = vetor[i-1];
-			}
-			vetor[ind] = elem;
-			tamanho++;
-		} else {
-			System.out.println("Índice inválido");
-		}
-	}
+        if (ind >= 0 && ind < vetor.length) {
+            if (tamanho == vetor.length) {
+                System.out.println("A lista está cheia. Não é possível adicionar mais elementos.");
+                return;
+            }
+
+            if (vetor[ind] != 0) {
+                for (int i = tamanho; i > ind; i--) {
+                    vetor[i] = vetor[i - 1];
+                }
+            }
+
+            vetor[ind] = elem;
+            tamanho++;
+        } else {
+            System.out.println("Índice inválido");
+        }
+    }
 	
 	public void remove(int ind) {
 		if(ind >=0 && ind < tamanho) {
@@ -40,7 +48,10 @@ public class ListaVetores {
 	public void printLista() {
 		System.out.println("Valores presentes na Lista: ");
 		for (int i : vetor) {
-			System.out.println(i);
+			if(i != 0) {
+				System.out.println(i);
+			}
+			
 		}
 	}
 }

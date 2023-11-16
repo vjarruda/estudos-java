@@ -8,13 +8,7 @@ public class App {
 		lista.add(1, 5);
 		lista.printLista();
 		
-		lista.add(0, 20);
-		lista.printLista();
-		
-		lista.remove(0);
-		lista.printLista();
-		
-		lista.remove(0);
+		lista.add(1, 3);
 		lista.printLista();
 	}
 }
