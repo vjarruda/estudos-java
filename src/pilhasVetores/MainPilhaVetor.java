@@ -1,23 +1,56 @@
 package pilhasVetores;
 
+import java.util.Scanner;
+
 public class MainPilhaVetor {
 	public static void main(String[] args) {
-		Pilha pilha = new Pilha(5);
+		Scanner scanner = new Scanner(System.in);
+		int tamanho;
+		int escolha;
 		
-		System.out.println("Pilha Vazia? " + pilha.isEmpty());
+		System.out.println("Qual o tamanho da lista que você deseja? ");
+		tamanho = scanner.nextInt();
+		Pilha pilha = new Pilha(tamanho);
 		
-		pilha.push(1);
-		pilha.push(2);
-		pilha.push(3);
 		
-		System.out.println("Pilha Vazia? " + pilha.isEmpty());
-		System.out.println("Tamanho da pilha: " + pilha.size());
-		System.out.println("Elemento do topo: " + pilha.top());
-		
-		pilha.showPilha();
-		
-		pilha.pop();
-		
-		pilha.showPilha();
+		do {
+			System.out.println("| ---------------------------------------------------------------------------- |");
+            System.out.println("| Insira a opção que deseja:                                                   |");
+            System.out.println("| 1 - Push ; 2 - Pop ; 3 - Size ; 4 - isEmpty ; 5 - Top ; 6 - Print ; 7 - Sair |");
+            System.out.println("| ---------------------------------------------------------------------------- |");
+            
+            escolha = scanner.nextInt();
+            scanner.nextLine();
+
+			switch (escolha) {
+			case 1:
+				System.out.println("Insira o valor: ");
+				pilha.push(scanner.nextLine());
+				break;
+			case 2:
+				System.out.println("Elemento removido: " + pilha.pop());
+				break;
+			case 3:
+				System.out.println("Tamanho da pilha: " +  pilha.size());
+				break;
+			case 4:
+				System.out.println("A pilha está vazia?" + pilha.isEmpty());
+				break;
+			case 5:
+				System.out.println("Elemento do topo: " + pilha.top());
+				break;
+			case 6:
+				pilha.showPilha();
+				break;
+			case 7:
+				System.out.println(" ");
+				break;
+			default:
+				System.out.println("Opção inválida. Tente novamente.");
+				break;
+			}
+		} while (escolha != 7);
+		scanner.close();
 	}
+
 }

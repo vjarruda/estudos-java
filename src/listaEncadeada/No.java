@@ -1,10 +1,10 @@
 package listaEncadeada;
 
 public class No {
-	int valor;
+	String valor;
 	No proximo;
 	
-	public No(int valor) {
+	public No(String valor) {
 		this.valor = valor;
 		this.proximo = null;
 	}
