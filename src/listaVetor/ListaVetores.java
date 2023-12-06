@@ -1,4 +1,4 @@
-package listas;
+package listaVetor;
 
 public class ListaVetores {
     private int tamanho;
@@ -15,13 +15,13 @@ public class ListaVetores {
                 System.out.println("A lista está cheia. Não é possível adicionar mais elementos.");
                 return;
             }
-
+            //move elementos 
             if (vetor[ind] != null) {
                 for (int i = tamanho; i > ind; i--) {
                     vetor[i] = vetor[i - 1];
                 }
             }
-
+            //adiciona na posicao
             vetor[ind] = elem;
             tamanho++;
         } else {
@@ -31,6 +31,7 @@ public class ListaVetores {
 
     public void remove(int ind) {
         if (ind >= 0 && ind < tamanho) {
+        	//move elementos
             for (int i = ind; i < tamanho - 1; i++) {
                 vetor[i] = vetor[i + 1];
             }

@@ -1,4 +1,4 @@
-package listas;
+package listaEncadeadaSimples;
 
 import java.util.Scanner;
 
@@ -6,11 +6,7 @@ import java.util.Scanner;
 public class App {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int tamanho;
-		
-		System.out.println("Qual o tamanho da lista que você deseja? ");
-		tamanho = scanner.nextInt();
-		ListaVetores lista = new ListaVetores(tamanho);
+		ListaEncadeada lista = new ListaEncadeada();
 		
 		int escolha;
 		do {
@@ -38,7 +34,7 @@ public class App {
 			case 3:
 				System.out.println("Insira a posição que deseja saber o valor: ");
 				int valor = scanner.nextInt();
-				lista.getValor(valor);
+				System.out.println(lista.get(valor));
 				break;
 			case 4:
 				System.out.println("Insira a posição");
@@ -48,7 +44,7 @@ public class App {
 				lista.set(index, scanner.nextLine());
 				break;
 			case 5:
-				lista.printLista();
+				lista.mostrarLista();
 				break;
 			case 6:
 				System.out.println(" ");
@@ -62,4 +58,3 @@ public class App {
 	}
 
 }
-
